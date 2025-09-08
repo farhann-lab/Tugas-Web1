@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Pendaftaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(21, 32, 45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: #262d41;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: gold;
+        }
+
+        .form-container label {
+            color: antiquewhite;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] {
+            background: rgb(228, 194, 0);
+            color: rgb(255, 255, 255);
+        }
+
+        input[type="reset"] {
+            background: #f44336;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            background: rgb(188, 160, 0);
+        }
+
+        input[type="reset"]:hover {
+            background: #ce2e2c;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulir Pendaftaran</h2>
+        <form action="proses.php" method="post" style="color: antiquewhite;">
+            <!-- Input text -->
+            <div class="form-group">
+                <label for="username">Nama Pengguna:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <!-- Input password -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- Biodata diri -->
+             <div class="form-group">
+                <label for="biodata">Tanggal Lahir:</label>
+                <input type="text" id="biodata" name="tgllahir" required>
+            </div>
+            <div class="form-group">
+                <label for="biodata">Email:</label>
+                <input type="text" id="biodata" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="biodata">Nomor HP/Whatsapp:</label>
+                <input type="text" id="biodata" name="nohp" required>
+            </div>
+
+            <!-- Radio button -->
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <input type="radio" id="laki" name="gender" value="Laki-laki">
+                <label for="laki">Laki-laki</label>
+                <input type="radio" id="perempuan" name="gender" value="Perempuan">
+                <label for="perempuan">Perempuan</label>
+            </div><br>
+
+            <!-- Media Sosial -->
+             <div class="form-group">
+                <label for="medsos">Instagram:</label>
+                <input type="text" id="medsos" name="instagram" required>
+            </div>
+            <div class="form-group">
+                <label for="medsos">Tiktok:</label>
+                <input type="text" id="medsos" name="tiktok" required>
+            </div>
+            <div class="form-group">
+                <label for="medsos">X:</label>
+                <input type="text" id="medsos" name="x" required>
+            </div>
+            
+            <!-- Text Area -->
+                <div class="form-group">
+                <label for="alamat">Apa alasan kamu menggemari band ini:</label>
+                <textarea id="alamat" name="alamat" rows="4"></textarea>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-group">
+                <label>Genre Musik Favorit:</label>
+                <input type="checkbox" id="indie" name="genre" value="indie">
+                <label for="indie">Indie</label>
+                <input type="checkbox" id="pop" name="genre" value="pop">
+                <label for="pop">Pop</label>
+                <input type="checkbox" id="Rock" name="genre" value="Rock">
+                <label for="rock">Rock</label>
+            </div><br>
+
+            <div class="form-group">
+                <label>Apakah Anda pernah menonton konser kami?:</label>
+                <input type="radio" id="ya" name="konser" value="Ya">
+                <label for="ya">Ya</label>
+                <input type="radio" id="tidak" name="konser" value="Tidak">
+                <label for="tidak">Tidak</label>
+            </div><br>
+
+            <!-- Select -->
+            <div class="form-group">
+                <label for="kota">Personil Favorit:</label>
+                <select id="personil" name="personil">
+                    <option value="fathia">Fathia Izzati</option>
+                    <option value="faiz">Faiz Novascotia Saripudin</option>
+                    <option value="nugi">Nugi Wicaksono</option>
+                    <option value="era">Era Patigo Rizky</option>
+                </select>
+            </div>
+
+            <!-- Tombol Submit dan Reset -->
+            <div class="buttons">
+                <input type="submit" value="Kirim">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
