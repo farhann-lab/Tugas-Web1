@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        .box {
+            border: 1px solid #333;
+            width: 185px;
+            padding: 20px;
+        }
+
+        #output {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<form name="formdaftar">
+    <div class="box">
+    <table>
+        <tr>
+            <td>Bilangan 1</td>
+        </tr>
+        <tr><td><input type="number" id="angka1" size="30" placeholder="Masukkan Bilangan 1"></td>
+        </tr>
+        <tr>
+            <td>Bilangan 2</td>
+        </tr>
+            <td><input type="number" id="angka2" size="30" placeholder="Masukkan Bilangan 2"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="hitung('+')">+</button>&nbsp;
+            <button type="button" onclick="hitung('-')">-</button>&nbsp;
+            <button type="button" onclick="hitung('*')">x</button>&nbsp;
+            <button type="button" onclick="hitung('/')">/</button>&nbsp;
+            <button type="reset" onclick="return">Reset</button>
+        </td>
+        </tr>
+    </table>
+    <div id="output">Hasil: -</div>
+    </div>
+
+    <script>
+        function hitung(op){
+        let a = parseFloat(document.getElementById('angka1').value);
+        let b = parseFloat(document.getElementById('angka2').value);
+        let output = 0;
+        
+         if (isNaN(a) || isNaN(b)) {
+        document.getElementById('output').innerText = "Hasil: Masukkan angka valid!";
+        return;
+      }
+
+    switch(op) {
+        case '+':
+          output = a + b;
+          break;
+        case '-':
+          output = a - b;
+          break;
+        case '*':
+          output = a * b;
+          break;
+        case '/':
+          if (b === 0) {
+            document.getElementById('output').innerText = "Hasil: Tidak bisa dibagi 0!";
+            return;
+          }
+          output = a / b;
+          break;
+      }
+
+      document.getElementById('output').innerText = "Hasil: " + output;
+    }
+    </script>
+</body>
+</html>
